@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?define Win64 = "no" ?>
+<?define ProductName = "Vidyo Addin" ?>
+<?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+<?define ProductVersion = "1.0.2.0"?>
+<?define ProductUpgradeCode = "19DBA20C-554C-471F-90F0-558A86A6B2A0"?>
+<?define ManufacturerName = "Interactive Intelligence"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.ManufacturerName)" UpgradeCode="$(var.ProductUpgradeCode)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    
+    <!--Directory Structure-->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.PlatformProgramFilesFolder)">
+        <Directory Id="INSTALLLOCATION" Name="$(var.ProductName)">
+          <Directory Id="ADDINIMAGES" Name="img">
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <!--Uninstall Previous Versions-->
+    <Upgrade Id="$(var.ProductUpgradeCode)">
+      <UpgradeVersion Minimum="$(var.ProductVersion)" IncludeMinimum="no" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
+      <UpgradeVersion Minimum="0.0.0" Maximum="$(var.ProductVersion)" IncludeMinimum="yes" IncludeMaximum="yes" Property="OLDERVERSIONBEINGUPGRADED" />
+    </Upgrade>
+ 
+    <Feature Id="ProductFeature" Title="Vidyo Addin" Level="1">
+      <ComponentGroupRef Id="Addin" />
+    </Feature>
+    
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallInitialize" />
+      <Custom Action="NewerVersion" After="FindRelatedProducts">NEWERVERSIONDETECTED</Custom>
+    </InstallExecuteSequence>
+
+    <CustomAction Id="NewerVersion" Error="A later version of [ProductName] is already installed." />
+ 
+    <UI>
+      <UIRef Id="WixUI_InstallDir" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+    </UI>
+ 
+    <WixVariable Id="WixUIBannerBmp" Value="banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="dialog.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+ 
+ 
+    <!--Add/Remove Programs Icon Image-->
+    <Icon Id="I3Logo.ico" SourceFile="I3Logo.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="I3Logo.ico" />
+
+    <!--Install Location Path-->
+    <Property Id="INSTALLLOCATION">
+      <![CDATA[c:\Program Files (x86)\Interactive Intelligence\ICUserApps\Addins]]>
+    </Property>
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+ 
+  </Product>
+ 
+  <Fragment>
+    <ComponentGroup Id="Addin">
+      <Component Id="AddinFiles" Guid="F0BB7F0C-5164-48C2-9A90-9DCC8EA0D73A" Directory="INSTALLLOCATION">
+        <File Id="PsoTrace.dll" Name="PsoTrace.dll" Source="..\VidyoAddin\bin\Release\PsoTrace.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="PsoTrace.pdb" Name="PsoTrace.pdb" Source="..\VidyoAddin\bin\Release\PsoTrace.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.PSO.VidyoIntegration.VidyoAddin.dll" Name="ININ.PSO.VidyoIntegration.VidyoAddin.dll" Source="..\VidyoAddin\bin\Release\ININ.Alliances.VidyoIntegration.VidyoAddin.dll" Vital="yes" KeyPath="yes" DiskId="1"/>
+        <File Id="ININ.PSO.VidyoIntegration.VidyoAddin.pdb" Name="ININ.PSO.VidyoIntegration.VidyoAddin.pdb" Source="..\VidyoAddin\bin\Release\ININ.Alliances.VidyoIntegration.VidyoAddin.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.Alliances.VidyoIntegration.CommonLib.dll" Name="ININ.Alliances.VidyoIntegration.CommonLib.dll" Source="..\VidyoAddin\bin\Release\ININ.Alliances.VidyoIntegration.CommonLib.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.Alliances.VidyoIntegration.CommonLib.pdb" Name="ININ.Alliances.VidyoIntegration.CommonLib.pdb" Source="..\VidyoAddin\bin\Release\ININ.Alliances.VidyoIntegration.CommonLib.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="..\VidyoAddin\bin\Release\Newtonsoft.Json.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="Newtonsoft.Json.pdb" Name="Newtonsoft.Json.pdb" Source="..\VidyoAddin\bin\Release\Newtonsoft.Json.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="RestSharp.dll" Name="RestSharp.dll" Source="..\VidyoAddin\bin\Release\RestSharp.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+      </Component>
+      <Component Id="AddinImages" Guid="FCED64BD-DC6A-478E-B12D-6704D19A604E" Directory="ADDINIMAGES">
+        <File Id="add.png" Name="add.png" Source="..\VidyoAddin\bin\Release\img\add.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="documents.png" Name="documents.png" Source="..\VidyoAddin\bin\Release\img\documents.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="sign_warning.png" Name="sign_warning.png" Source="..\VidyoAddin\bin\Release\img\sign_warning.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="webcam_add.png" Name="webcam_add.png" Source="..\VidyoAddin\bin\Release\img\webcam_add.png" Vital="yes" KeyPath="no" DiskId="1"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

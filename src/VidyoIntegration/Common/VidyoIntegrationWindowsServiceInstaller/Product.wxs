@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?define Win64 = "no" ?>
+<?define ProductName = "Vidyo Integration Service" ?>
+<?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+<?define ProductVersion = "1.0.3.0"?>
+<?define ProductUpgradeCode = "23D44F45-76CA-4DD4-ADAB-CC27764A4754"?>
+<?define ManufacturerName = "Interactive Intelligence"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.ManufacturerName)" UpgradeCode="$(var.ProductUpgradeCode)">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    
+    <!--Directory Structure-->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="$(var.PlatformProgramFilesFolder)">
+        <Directory Id="ININFolder" Name="$(var.ManufacturerName)" >
+          <Directory Id="INSTALLLOCATION" Name="$(var.ProductName)" />
+        </Directory>
+      </Directory>
+    </Directory>
+ 
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+ 
+    <Feature Id="ProductFeature" Title="Vidyo Integration Service" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+ 
+    <UI>
+      <UIRef Id="WixUI_InstallDir" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+    </UI>
+ 
+    <WixVariable Id="WixUIBannerBmp" Value="banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="dialog.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+    <Icon Id="I3Logo.ico" SourceFile="I3Logo.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="I3Logo.ico" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+ 
+  </Product>
+ 
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLLOCATION">
+      <Component Id="ProductComponent" Guid="B4665FBF-D065-4CDB-B2FF-9E22D624E595">
+        <!-- Files -->
+        <File Id="ace_w32r_1_2.dll" Name="ace-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\ace-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="core_events_w32r_1_2.dll" Name="core_events-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\core_events-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3core_w32r_1_2.dll" Name="i3core-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\i3core-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3eventlog_w32r_1_2.dll" Name="i3eventlog-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\i3eventlog-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3moduleregistry_w32.dll" Name="i3moduleregistry-w32.dll" Source="..\VidyoIntegrationHost\bin\Release\i3moduleregistry-w32.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3serialize_managed_a00r_1_2.dll" Name="i3serialize_managed-a00r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\i3serialize_managed-a00r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3serialize_managed_a00r_1_2.pdb" Name="i3serialize_managed-a00r-1-2.pdb" Source="..\VidyoIntegrationHost\bin\Release\i3serialize_managed-a00r-1-2.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3trace_w32r_1_2.dll" Name="i3trace-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\i3trace-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3trace_dotnet_tracing_w32r_1_2.dll" Name="i3trace_dotnet_tracing-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\i3trace_dotnet_tracing-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3trace_dotnet_tracing_w32r_1_2.pdb" Name="i3trace_dotnet_tracing-w32r-1-2.pdb" Source="..\VidyoIntegrationHost\bin\Release\i3trace_dotnet_tracing-w32r-1-2.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3trace_dotnet_tracing_interop_w32r_1_2.dll" Name="i3trace_dotnet_tracing_interop-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\i3trace_dotnet_tracing_interop-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.Common.dll" Name="ININ.Common.dll" Source="..\VidyoIntegrationHost\bin\Release\ININ.Common.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.Common.pdb" Name="ININ.Common.pdb" Source="..\VidyoIntegrationHost\bin\Release\ININ.Common.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.IceLib.dll" Name="ININ.IceLib.dll" Source="..\VidyoIntegrationHost\bin\Release\ININ.IceLib.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.IceLib.pdb" Name="ININ.IceLib.pdb" Source="..\VidyoIntegrationHost\bin\Release\ININ.IceLib.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.IceLib.Interactions.dll" Name="ININ.IceLib.Interactions.dll" Source="..\VidyoIntegrationHost\bin\Release\ININ.IceLib.Interactions.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.IceLib.Interactions.pdb" Name="ININ.IceLib.Interactions.pdb" Source="..\VidyoIntegrationHost\bin\Release\ININ.IceLib.Interactions.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.ThinBridge.dll" Name="ININ.ThinBridge.dll" Source="..\VidyoIntegrationHost\bin\Release\ININ.ThinBridge.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.ThinBridge.pdb" Name="ININ.ThinBridge.pdb" Source="..\VidyoIntegrationHost\bin\Release\ININ.ThinBridge.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.ThinBridge.Types.dll" Name="ININ.ThinBridge.Types.dll" Source="..\VidyoIntegrationHost\bin\Release\ININ.ThinBridge.Types.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.ThinBridge.Types.pdb" Name="ININ.ThinBridge.Types.pdb" Source="..\VidyoIntegrationHost\bin\Release\ININ.ThinBridge.Types.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="openssl_w32r_1_2.dll" Name="openssl-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\openssl-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="PsoTrace.dll" Name="PsoTrace.dll" Source="..\VidyoIntegrationHost\bin\Release\PsoTrace.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="PsoTrace.pdb" Name="PsoTrace.pdb" Source="..\VidyoIntegrationHost\bin\Release\PsoTrace.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="stlport_w32r_1_2.dll" Name="stlport-w32r-1-2.dll" Source="..\VidyoIntegrationHost\bin\Release\stlport-w32r-1-2.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.PSO.VidyoIntegration.VidyoIntegrationAttributeNames.dll" Name="ININ.PSO.VidyoIntegration.VidyoIntegrationAttributeNames.dll" Source="..\VidyoIntegrationHost\bin\Release\ININ.PSO.VidyoIntegration.VidyoIntegrationAttributeNames.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.PSO.VidyoIntegration.VidyoIntegrationAttributeNames.pdb" Name="ININ.PSO.VidyoIntegration.VidyoIntegrationAttributeNames.pdb" Source="..\VidyoIntegrationHost\bin\Release\ININ.PSO.VidyoIntegration.VidyoIntegrationAttributeNames.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.PSO.VidyoIntegration.VidyoIntegrationService.dll" Name="ININ.PSO.VidyoIntegration.VidyoIntegrationService.dll" Source="..\VidyoIntegrationHost\bin\Release\ININ.PSO.VidyoIntegration.VidyoIntegrationService.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ININ.PSO.VidyoIntegration.VidyoIntegrationService.pdb" Name="ININ.PSO.VidyoIntegration.VidyoIntegrationService.pdb" Source="..\VidyoIntegrationHost\bin\Release\ININ.PSO.VidyoIntegration.VidyoIntegrationService.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="WebHttpCors.dll" Name="WebHttpCors.dll" Source="..\VidyoIntegrationHost\bin\Release\WebHttpCors.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="WebHttpCors.pdb" Name="WebHttpCors.pdb" Source="..\VidyoIntegrationHost\bin\Release\WebHttpCors.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        
+        <!-- Service EXE -->
+        <File Id="VidyoIntegrationHost.exe" Name="VidyoIntegrationHost.exe" Source="..\VidyoIntegrationHost\bin\Release\VidyoIntegrationHost.exe" Vital="yes" KeyPath="yes" DiskId="1"/>
+        <File Id="VidyoIntegrationHost.pdb" Name="VidyoIntegrationHost.pdb" Source="..\VidyoIntegrationHost\bin\Release\VidyoIntegrationHost.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="VidyoIntegrationHost.exe.config" Name="VidyoIntegrationHost.exe.config" Source="..\VidyoIntegrationHost\bin\Release\VidyoIntegrationHost.exe.config" Vital="yes" KeyPath="no" DiskId="1"/>
+        
+        <!-- Install service -->
+        <ServiceInstall
+                    Id="ServiceInstaller"
+                    Type="ownProcess"
+                    Vital="yes"
+                    Name="VidyoIntegrationService"
+                    DisplayName="Vidyo Integration Service"
+                    Description="Interactive Intelligence's integration for ACD Vidyo routing"
+                    Start="auto"
+                    Account="LocalSystem"
+                    ErrorControl="ignore"
+                    Interactive="no" />
+
+        <!-- Register event source -->
+        <util:EventSource Log="Application" Name="VidyoIntegrationService" EventMessageFile="%SystemRoot%\Microsoft.NET\Framework\v2.0.50727\EventLogMessages.dll"/>
+      </Component>
+ 
+    </ComponentGroup>
+  </Fragment>
+</Wix>
