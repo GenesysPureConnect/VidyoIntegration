@@ -2,7 +2,7 @@
 <?define Win64 = "no" ?>
 <?define ProductName = "Vidyo Addin" ?>
 <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
-<?define ProductVersion = "1.0.2.0"?>
+<?define ProductVersion = "1.1.0.0"?>
 <?define ProductUpgradeCode = "19DBA20C-554C-471F-90F0-558A86A6B2A0"?>
 <?define ManufacturerName = "Interactive Intelligence"?>
 
@@ -64,21 +64,45 @@
   <Fragment>
     <ComponentGroup Id="Addin">
       <Component Id="AddinFiles" Guid="F0BB7F0C-5164-48C2-9A90-9DCC8EA0D73A" Directory="INSTALLLOCATION">
+        <File Id="AutoCompleteTextBoxLib.dll" Name="AutoCompleteTextBoxLib.dll" Source="..\VidyoAddin\bin\Release\AutoCompleteTextBoxLib.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="AutoCompleteTextBoxLib.pdb" Name="AutoCompleteTextBoxLib.pdb" Source="..\VidyoAddin\bin\Release\AutoCompleteTextBoxLib.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="..\VidyoAddin\bin\Release\Newtonsoft.Json.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="PsoTrace.dll" Name="PsoTrace.dll" Source="..\VidyoAddin\bin\Release\PsoTrace.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="PsoTrace.pdb" Name="PsoTrace.pdb" Source="..\VidyoAddin\bin\Release\PsoTrace.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="ININ.PSO.VidyoIntegration.VidyoAddin.dll" Name="ININ.PSO.VidyoIntegration.VidyoAddin.dll" Source="..\VidyoAddin\bin\Release\ININ.Alliances.VidyoIntegration.VidyoAddin.dll" Vital="yes" KeyPath="yes" DiskId="1"/>
-        <File Id="ININ.PSO.VidyoIntegration.VidyoAddin.pdb" Name="ININ.PSO.VidyoIntegration.VidyoAddin.pdb" Source="..\VidyoAddin\bin\Release\ININ.Alliances.VidyoIntegration.VidyoAddin.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="ININ.Alliances.VidyoIntegration.CommonLib.dll" Name="ININ.Alliances.VidyoIntegration.CommonLib.dll" Source="..\VidyoAddin\bin\Release\ININ.Alliances.VidyoIntegration.CommonLib.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="ININ.Alliances.VidyoIntegration.CommonLib.pdb" Name="ININ.Alliances.VidyoIntegration.CommonLib.pdb" Source="..\VidyoAddin\bin\Release\ININ.Alliances.VidyoIntegration.CommonLib.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="..\VidyoAddin\bin\Release\Newtonsoft.Json.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="Newtonsoft.Json.pdb" Name="Newtonsoft.Json.pdb" Source="..\VidyoAddin\bin\Release\Newtonsoft.Json.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="RestSharp.dll" Name="RestSharp.dll" Source="..\VidyoAddin\bin\Release\RestSharp.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="VidyoIntegration.CommonLib.dll" Name="VidyoIntegration.CommonLib.dll" Source="..\VidyoAddin\bin\Release\VidyoIntegration.CommonLib.dll" Vital="yes" KeyPath="yes" DiskId="1"/>
+        <File Id="VidyoIntegration.CommonLib.pdb" Name="VidyoIntegration.CommonLib.pdb" Source="..\VidyoAddin\bin\Release\VidyoIntegration.CommonLib.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="VidyoIntegration.VidyoAddin.dll" Name="VidyoIntegration.VidyoAddin.dll" Source="..\VidyoAddin\bin\Release\VidyoIntegration.VidyoAddin.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="VidyoIntegration.VidyoAddin.pdb" Name="VidyoIntegration.VidyoAddin.pdb" Source="..\VidyoAddin\bin\Release\VidyoIntegration.VidyoAddin.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
       </Component>
       <Component Id="AddinImages" Guid="FCED64BD-DC6A-478E-B12D-6704D19A604E" Directory="ADDINIMAGES">
         <File Id="add.png" Name="add.png" Source="..\VidyoAddin\bin\Release\img\add.png" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="documents.png" Name="documents.png" Source="..\VidyoAddin\bin\Release\img\documents.png" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="sign_warning.png" Name="sign_warning.png" Source="..\VidyoAddin\bin\Release\img\sign_warning.png" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="webcam_add.png" Name="webcam_add.png" Source="..\VidyoAddin\bin\Release\img\webcam_add.png" Vital="yes" KeyPath="no" DiskId="1"/>
+
+        <File Id="controls_delete.png" Name="delete.png" Source="..\VidyoAddin\bin\Release\img\controls\delete.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_delete_d.png" Name="delete_d.png" Source="..\VidyoAddin\bin\Release\img\controls\delete_d.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_delete_h.png" Name="delete_h.png" Source="..\VidyoAddin\bin\Release\img\controls\delete_h.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_loudspeaker.png" Name="loudspeaker.png" Source="..\VidyoAddin\bin\Release\img\controls\loudspeaker.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_loudspeaker_d.png" Name="loudspeaker_d.png" Source="..\VidyoAddin\bin\Release\img\controls\loudspeaker_d.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_loudspeaker_h.png" Name="loudspeaker_h.png" Source="..\VidyoAddin\bin\Release\img\controls\loudspeaker_h.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_loudspeaker_pause.png" Name="loudspeaker_pause.png" Source="..\VidyoAddin\bin\Release\img\controls\loudspeaker_pause.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_loudspeaker_pause_d.png" Name="loudspeaker_pause_d.png" Source="..\VidyoAddin\bin\Release\img\controls\loudspeaker_pause_d.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_loudspeaker_pause_h.png" Name="loudspeaker_pause_h.png" Source="..\VidyoAddin\bin\Release\img\controls\loudspeaker_pause_h.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_webcam.png" Name="webcam.png" Source="..\VidyoAddin\bin\Release\img\controls\webcam.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_webcam_d.png" Name="webcam_d.png" Source="..\VidyoAddin\bin\Release\img\controls\webcam_d.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_webcam_h.png" Name="webcam_h.png" Source="..\VidyoAddin\bin\Release\img\controls\webcam_h.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_webcam_pause.png" Name="webcam_pause.png" Source="..\VidyoAddin\bin\Release\img\controls\webcam_pause.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_webcam_pause_d.png" Name="webcam_pause_d.png" Source="..\VidyoAddin\bin\Release\img\controls\webcam_pause_d.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="controls_webcam_pause_h.png" Name="webcam_pause_h.png" Source="..\VidyoAddin\bin\Release\img\controls\webcam_pause_h.png" Vital="yes" KeyPath="no" DiskId="1"/>
+
+        <File Id="transfer_Make_Conference_16_d_m_add.png" Name="transfer_Make_Conference_16_d_m_add.png" Source="..\VidyoAddin\bin\Release\img\transfer\Make Conference 16 d m_add.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="transfer_Make_Conference_16_h_m_add.png" Name="transfer_Make_Conference_16_h_m_add.png" Source="..\VidyoAddin\bin\Release\img\transfer\Make Conference 16 h m_add.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="transfer_Make_Conference_16_n_m_add.png" Name="transfer_Make_Conference_16_n_m_add.png" Source="..\VidyoAddin\bin\Release\img\transfer\Make Conference 16 n m_add.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="transfer_Transfer_16_d_m.png" Name="transfer_Transfer_16_d_m.png" Source="..\VidyoAddin\bin\Release\img\transfer\Transfer 16 d m.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="transfer_Transfer_16_h_m.png" Name="transfer_Transfer_16_h_m.png" Source="..\VidyoAddin\bin\Release\img\transfer\Transfer 16 h m.png" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="transfer_Transfer_16_n_m.png" Name="transfer_Transfer_16_n_m.png" Source="..\VidyoAddin\bin\Release\img\transfer\Transfer 16 n m.png" Vital="yes" KeyPath="no" DiskId="1"/>
       </Component>
     </ComponentGroup>
   </Fragment>
