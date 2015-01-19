@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 using RestSharp;
 using VidyoIntegration.CommonLib.VidyoTypes.RequestClasses;
 using VidyoIntegration.CommonLib.VidyoTypes.TransportClasses;

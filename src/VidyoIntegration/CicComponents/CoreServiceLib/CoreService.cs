@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 using Nancy.Helpers;
 using VidyoIntegration.CicManagerLib;
 using VidyoIntegration.CommonLib.CicTypes;

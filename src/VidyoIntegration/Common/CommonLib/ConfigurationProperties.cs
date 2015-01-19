@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Runtime.CompilerServices;
 using System.ServiceModel.Configuration;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 
 namespace VidyoIntegration.CommonLib
 {

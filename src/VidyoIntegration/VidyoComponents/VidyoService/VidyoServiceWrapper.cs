@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Text;
 using System.Web;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 using Newtonsoft.Json;
 using VidyoIntegration.CommonLib;
 using VidyoIntegration.CommonLib.VidyoTypes.RequestClasses;

@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VidyoIntegrationWindowsServ
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "VidyoIntegrationWindowsServiceInstaller", "Common\VidyoIntegrationWindowsServiceInstaller\VidyoIntegrationWindowsServiceInstaller.wixproj", "{234B024E-40D6-4CE3-8110-4840E90E7290}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLib", "Common\TraceLib\TraceLib.csproj", "{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,16 @@ Global
 		{234B024E-40D6-4CE3-8110-4840E90E7290}.Release|Mixed Platforms.Build.0 = Release|x86
 		{234B024E-40D6-4CE3-8110-4840E90E7290}.Release|x86.ActiveCfg = Release|x86
 		{234B024E-40D6-4CE3-8110-4840E90E7290}.Release|x86.Build.0 = Release|x86
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -192,5 +204,6 @@ Global
 		{846F954B-9E94-49C6-888F-4887F4200A72} = {F5ACDC4C-7B30-4A16-8E94-353B76145CD8}
 		{9FBCFE44-7752-4EF0-8547-4CA9DD28D1BF} = {352AB192-0C8C-491F-ADD1-B2A003B87872}
 		{234B024E-40D6-4CE3-8110-4840E90E7290} = {352AB192-0C8C-491F-ADD1-B2A003B87872}
+		{EC6C24DD-3835-4446-9FC0-EF885D6EE8F1} = {352AB192-0C8C-491F-ADD1-B2A003B87872}
 	EndGlobalSection
 EndGlobal

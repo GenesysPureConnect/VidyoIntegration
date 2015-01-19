@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 using RestSharp;
 using VidyoIntegration.CommonLib;
 using Trace = VidyoIntegration.CommonLib.Trace;

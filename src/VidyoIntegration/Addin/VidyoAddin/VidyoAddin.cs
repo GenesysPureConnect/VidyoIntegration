@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.Integration;
 using ININ.IceLib.Connection;
 using ININ.InteractionClient.AddIn;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 using VidyoIntegration.CommonLib.VidyoTypes;
 using VidyoIntegration.VidyoAddin.View;
 using VidyoIntegration.VidyoAddin.ViewModel;
@@ -25,7 +25,7 @@ namespace VidyoIntegration.VidyoAddin
 
         protected override string Id
         {
-            get { return "ININ_PSO_VIDYO_ADDIN"; }
+            get { return "VIDYO_ADDIN"; }
         }
 
         protected override string DisplayName
@@ -35,7 +35,7 @@ namespace VidyoIntegration.VidyoAddin
 
         protected override string CategoryId
         {
-            get { return "ININ_PSO_VIDYO"; }
+            get { return "VIDYO"; }
         }
 
         protected override string CategoryDisplayName

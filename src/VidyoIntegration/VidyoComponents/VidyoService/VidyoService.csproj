@@ -41,9 +41,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PsoTrace">
-      <HintPath>..\..\..\..\..\..\lib\PsoTrace\tracing 2-0\PsoTrace.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -803,6 +800,10 @@
     <ProjectReference Include="..\..\Common\CommonLib\CommonLib.csproj">
       <Project>{e82be7a6-3335-435d-a364-a655a74c470a}</Project>
       <Name>CommonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\TraceLib\TraceLib.csproj">
+      <Project>{ec6c24dd-3835-4446-9fc0-ef885d6ee8f1}</Project>
+      <Name>TraceLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

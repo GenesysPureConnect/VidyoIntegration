@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 
 namespace VidyoIntegration.CommonLib
 {
@@ -58,7 +58,7 @@ namespace VidyoIntegration.CommonLib
         }
     }
 
-    public class Trace : PsoTrace
+    public class Trace : TraceLibBase
     {
         public static MainTopic Main = new MainTopic();
         public static VidyoTopic Vidyo = new VidyoTopic();

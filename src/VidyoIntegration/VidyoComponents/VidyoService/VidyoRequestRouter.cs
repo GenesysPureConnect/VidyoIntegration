@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Timers;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 using Nancy;
 using Nancy.ModelBinding;
 using Nancy.Routing;

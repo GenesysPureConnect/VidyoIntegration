@@ -1,4 +1,4 @@
-﻿using ININ.PSO.PsoTrace;
+﻿using VidyoIntegration.TraceLib;
 
 namespace VidyoIntegration.VidyoAddin
 {
@@ -12,7 +12,7 @@ namespace VidyoIntegration.VidyoAddin
         }
     }
 
-    public class Trace : PsoTrace
+    public class Trace : TraceLibBase
     {
         public static MainTopic Main = new MainTopic();
     }

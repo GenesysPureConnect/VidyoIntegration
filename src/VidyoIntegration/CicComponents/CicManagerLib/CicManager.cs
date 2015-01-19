@@ -5,7 +5,7 @@ using System.Linq;
 using ININ.IceLib.Connection;
 using ININ.IceLib.Connection.Extensions;
 using ININ.IceLib.Interactions;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 using VidyoIntegration.CommonLib;
 using VidyoIntegration.CommonLib.CicTypes;
 using VidyoIntegration.CommonLib.CicTypes.TransportClasses;

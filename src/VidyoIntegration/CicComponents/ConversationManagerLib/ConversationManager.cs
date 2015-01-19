@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Web;
-using ININ.PSO.PsoTrace;
+using VidyoIntegration.TraceLib;
 using Newtonsoft.Json;
 using VidyoIntegration.CommonLib;
 using VidyoIntegration.CommonLib.CicTypes;
