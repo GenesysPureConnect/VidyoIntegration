@@ -12,7 +12,7 @@ using ININ.InteractionClient.AddIn;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Interactive Intelligence, Inc.")]
 [assembly: AssemblyProduct("VidyoAddin")]
-[assembly: AssemblyCopyright("Copyright © Interactive Intelligence, Inc. 2014")]
+[assembly: AssemblyCopyright("Copyright © Interactive Intelligence, Inc. 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

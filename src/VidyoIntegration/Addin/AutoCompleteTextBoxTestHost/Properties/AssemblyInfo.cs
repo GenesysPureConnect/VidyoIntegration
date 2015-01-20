@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("AutoCompleteTextBoxTestHost")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Interactive Intelligence, Inc.")]
 [assembly: AssemblyProduct("AutoCompleteTextBoxTestHost")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright © Interactive Intelligence, Inc. 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
