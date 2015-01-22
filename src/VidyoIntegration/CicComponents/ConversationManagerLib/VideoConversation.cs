@@ -54,8 +54,6 @@ namespace VidyoIntegration.ConversationManagerLib
 
         public bool IsConversationMuted { get; set; }
 
-        public VideoConversationMediaType MediaType { get; set; }
-
         public VideoConversationInitializationParameters InitializationParameters { get; set; }
 
         /// <summary>
@@ -79,7 +77,6 @@ namespace VidyoIntegration.ConversationManagerLib
             AttributeDictionary = new Dictionary<string, string>();
             ScopedQueueName = "";
             IsConversationMuted = false;
-            MediaType = VideoConversationMediaType.None;
             RoomUrl = "";
         }
 
