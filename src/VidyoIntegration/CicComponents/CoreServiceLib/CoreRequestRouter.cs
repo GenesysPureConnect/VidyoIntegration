@@ -343,7 +343,7 @@ namespace VidyoIntegration.CoreServiceLib
                 {
                     try
                     {
-                        UpdateCount("get /coreservice/infoe/routes");
+                        UpdateCount("get /coreservice/info/routes");
 
                         // Get cache of defined routes
                         var routes = routeCacheProvider.GetCache();
