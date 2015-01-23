@@ -239,7 +239,7 @@ namespace VidyoIntegration.CoreServiceLib
                             ? new Response
                             {
                                 StatusCode = HttpStatusCode.NoContent,
-                                ReasonPhrase = "Room deleted"
+                                ReasonPhrase = "Conversation deleted"
                             }
                             : new Response
                             {
