@@ -87,7 +87,6 @@
         <File Id="VidyoIntegration.TraceLib.dll" Name="VidyoIntegration.TraceLib.dll" Source="..\VidyoIntegrationWindowsService\bin\Release\VidyoIntegration.TraceLib.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="VidyoIntegration.TraceLib.pdb" Name="VidyoIntegration.TraceLib.pdb" Source="..\VidyoIntegrationWindowsService\bin\Release\VidyoIntegration.TraceLib.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="VidyoIntegration.VidyoService.dll" Name="VidyoIntegration.VidyoService.dll" Source="..\..\VidyoComponents\VidyoService\bin\Release\VidyoIntegration.VidyoService.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="VidyoIntegration.VidyoService.dll.config" Name="VidyoIntegration.VidyoService.dll.config" Source="..\..\VidyoComponents\VidyoService\bin\Release\VidyoIntegration.VidyoService.dll.config" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="VidyoIntegration.VidyoService.pdb" Name="VidyoIntegration.VidyoService.pdb" Source="..\..\VidyoComponents\VidyoService\bin\Release\VidyoIntegration.VidyoService.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="VidyoIntegrationWindowsService.exe" Name="VidyoIntegrationWindowsService.exe" Source="..\VidyoIntegrationWindowsService\bin\Release\VidyoIntegrationWindowsService.exe" Vital="yes" KeyPath="yes" DiskId="1"/>
         <File Id="VidyoIntegrationWindowsService.exe.config" Name="VidyoIntegrationWindowsService.exe.config" Source="..\VidyoIntegrationWindowsService\bin\Release\VidyoIntegrationWindowsService.exe.config" Vital="yes" KeyPath="no" DiskId="1"/>
