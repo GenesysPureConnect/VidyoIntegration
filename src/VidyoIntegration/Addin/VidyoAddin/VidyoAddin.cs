@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Management.Instrumentation;
+using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Forms.Integration;
 using ININ.IceLib.Connection;
 using ININ.InteractionClient.AddIn;
 using VidyoIntegration.TraceLib;
-using VidyoIntegration.CommonLib.VidyoTypes;
 using VidyoIntegration.VidyoAddin.View;
 using VidyoIntegration.VidyoAddin.ViewModel;
-using HorizontalAlignment = System.Windows.HorizontalAlignment;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace VidyoIntegration.VidyoAddin
@@ -22,6 +20,7 @@ namespace VidyoIntegration.VidyoAddin
         private IServiceProvider _serviceProvider;
         private Session _session;
         private readonly Window _window = null;
+        private SynchronizationContext _context;
 
         protected override string Id
         {
@@ -53,6 +52,7 @@ namespace VidyoIntegration.VidyoAddin
         public VidyoAddin()
         {
             VidyoIntegration.VidyoAddin.Trace.Initialize(typeof(EventId), "VidyoAddin");
+            _context = SynchronizationContext.Current;
         }
 
 
@@ -75,16 +75,30 @@ namespace VidyoIntegration.VidyoAddin
                 var interactionSelector =
                     _serviceProvider.GetService(typeof (IInteractionSelector)) as IInteractionSelector;
 
-                // Initialize view model
-                VidyoPanelViewModel.Instance.Initialize(_session, interactionSelector);
-
-                // Initialize view
-                _vidyoPanel = new VidyoPanel
+                _context.Send(s =>
                 {
-                    DataContext = VidyoPanelViewModel.Instance
-                };
-                //_vidyoPanel.InitializeComponent();
-                _elementHost = new ElementHost {Dock = DockStyle.Fill, Child = _vidyoPanel};
+                    try
+                    {
+                        // Initialize view model
+                        VidyoPanelViewModel.Instance.Initialize(_session, interactionSelector);
+
+                        // Initialize view
+                        _vidyoPanel = new VidyoPanel
+                        {
+                            DataContext = VidyoPanelViewModel.Instance
+                        };
+                        //_vidyoPanel.InitializeComponent();
+                        _elementHost = new ElementHost {Dock = DockStyle.Fill, Child = _vidyoPanel};
+                    }
+                    catch (Exception ex)
+                    {
+                        VidyoIntegration.VidyoAddin.Trace.Main.exception(ex, ex.Message);
+                        MessageBox.Show(
+                            "Vidyo Addin initialization failed! " + ex.Message +
+                            "\n\nPlease contact your system administrator.",
+                            "Critical error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }, null);
             }
             catch (Exception ex)
             {
@@ -100,19 +114,29 @@ namespace VidyoIntegration.VidyoAddin
         {
             try
             {
-                // Clear the vidyo panel reference
-                _vidyoPanel = null;
-
-                // Clean up the element host
-                if (!_elementHost.IsDisposed)
+                _context.Send(s =>
                 {
-                    _elementHost.Child = null;
-                    _elementHost.Dispose();
-                }
-                _elementHost = null;
+                    try
+                    {
+                        // Clear the vidyo panel reference
+                        _vidyoPanel = null;
 
-                // Close the debug window
-                if (_window != null) _window.Close();
+                        // Clean up the element host
+                        if (!_elementHost.IsDisposed)
+                        {
+                            _elementHost.Child = null;
+                            _elementHost.Dispose();
+                        }
+                        _elementHost = null;
+
+                        // Close the debug window
+                        if (_window != null) _window.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        VidyoIntegration.VidyoAddin.Trace.Main.exception(ex, ex.Message);
+                    }
+                }, null);
             }
             catch (Exception ex)
             {
