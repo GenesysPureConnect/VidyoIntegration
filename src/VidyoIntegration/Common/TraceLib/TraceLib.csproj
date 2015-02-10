@@ -43,8 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="i3trace_dotnet_tracing-w32r-2-0">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\i3trace_dotnet_tracing-w32r-2-0.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\i3trace_dotnet_tracing-w32r-2-0.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
