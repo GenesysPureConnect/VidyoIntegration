@@ -61,24 +61,30 @@ namespace VidyoIntegration.VidyoService
                 try
                 {
                     // Admin service
-                    _vidyoAdminService = new VidyoPortalAdminServicePortTypeClient(MakeBinding(),
-                        new EndpointAddress(ConfigurationProperties.VidyoPortalAdminServicePort.Address));
+                    _vidyoAdminService =
+                        new VidyoPortalAdminServicePortTypeClient(
+                            MakeBinding(ConfigurationProperties.VidyoPortalAdminServicePort.Address.Scheme),
+                            new EndpointAddress(ConfigurationProperties.VidyoPortalAdminServicePort.Address));
                     _vidyoAdminService.ClientCredentials.UserName.UserName = ConfigurationProperties.VidyoAdminUsername;
                     _vidyoAdminService.ClientCredentials.UserName.Password = ConfigurationProperties.VidyoAdminPassword;
                     _vidyoAdminService.ClientCredentials.SupportInteractive = false;
                     _vidyoAdminService.ChannelFactory.CreateChannel();
 
                     // Guest service
-                    _vidyoGuestService = new VidyoPortalGuestServicePortTypeClient(MakeBinding(),
-                        new EndpointAddress(ConfigurationProperties.VidyoPortalGuestServicePort.Address));
+                    _vidyoGuestService =
+                        new VidyoPortalGuestServicePortTypeClient(
+                            MakeBinding(ConfigurationProperties.VidyoPortalAdminServicePort.Address.Scheme),
+                            new EndpointAddress(ConfigurationProperties.VidyoPortalGuestServicePort.Address));
                     _vidyoGuestService.ClientCredentials.UserName.UserName = ConfigurationProperties.VidyoAdminUsername;
                     _vidyoGuestService.ClientCredentials.UserName.Password = ConfigurationProperties.VidyoAdminPassword;
                     _vidyoGuestService.ClientCredentials.SupportInteractive = false;
                     _vidyoGuestService.ChannelFactory.CreateChannel();
 
                     // User service
-                    _vidyoUserService = new VidyoPortalUserServicePortTypeClient(MakeBinding(),
-                        new EndpointAddress(ConfigurationProperties.VidyoPortalUserServicePort.Address));
+                    _vidyoUserService =
+                        new VidyoPortalUserServicePortTypeClient(
+                            MakeBinding(ConfigurationProperties.VidyoPortalAdminServicePort.Address.Scheme),
+                            new EndpointAddress(ConfigurationProperties.VidyoPortalUserServicePort.Address));
                     _vidyoUserService.ClientCredentials.UserName.UserName = ConfigurationProperties.VidyoAdminUsername;
                     _vidyoUserService.ClientCredentials.UserName.Password = ConfigurationProperties.VidyoAdminPassword;
                     _vidyoUserService.ClientCredentials.SupportInteractive = false;
@@ -98,7 +104,7 @@ namespace VidyoIntegration.VidyoService
 
         #region Private Methods
 
-        private CustomBinding MakeBinding()
+        private CustomBinding MakeBinding(string uriScheme)
         {
             var binding = new BasicHttpBinding
             {
@@ -117,7 +123,9 @@ namespace VidyoIntegration.VidyoService
 
             // Set security options
             binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
-            binding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;
+            binding.Security.Mode = uriScheme.Equals("https", StringComparison.OrdinalIgnoreCase)
+                ? BasicHttpSecurityMode.Transport
+                : BasicHttpSecurityMode.TransportCredentialOnly;
 
             // Turn off keep alive
             var customBinding = new CustomBinding(binding);
@@ -129,9 +137,9 @@ namespace VidyoIntegration.VidyoService
             return customBinding;
         }
 
-        private int MakeRandomRoomExtension()
+        private string MakeRandomRoomExtension()
         {
-            return _randomNumberGenerator.Next(900000000, 999999999); 
+            return ConfigurationProperties.VidyoExtensionPrefix + _randomNumberGenerator.Next(900000000, 999999999);
         }
 
         private int MakeRandomRoomPin()
@@ -255,12 +263,11 @@ namespace VidyoIntegration.VidyoService
                         room = new VidyoIntegration.VidyoService.VidyoPortalAdminService.Room
                         {
                             description = "Vidyo Integration Room",
-                            extension = ext.ToString(),
+                            extension = ext,
                             groupName = ConfigurationProperties.VidyoRoomGroup,
                             name = roomName,
                             ownerName = ConfigurationProperties.VidyoRoomOwner,
-                            roomIDSpecified = true,
-                            //roomID = ext,
+                            roomIDSpecified = false,
                             RoomMode = new RoomMode
                             {
                                 hasModeratorPIN = false,
@@ -280,7 +287,7 @@ namespace VidyoIntegration.VidyoService
                     {
                         Filter = new Filter
                         {
-                            query = ext.ToString()
+                            query = ext
                         }
                     });
                     sw.Stop();
@@ -291,7 +298,7 @@ namespace VidyoIntegration.VidyoService
                         Trace.Main.warning("More than one room returned from room query!");
                     if (room.total == 0)
                         throw new Exception("No rooms were returned from room query!");
-                    var verifiedRoom = room.room.FirstOrDefault(r => r.extension == ext.ToString() && r.name == roomName);
+                    var verifiedRoom = room.room.FirstOrDefault(r => r.extension == ext && r.name == roomName);
                     if (verifiedRoom == null)
                         throw new Exception("Failed to validate room result!");
 
