@@ -292,6 +292,8 @@ namespace VidyoIntegration.CicManagerLib
 
                         SendApplicationResponse(username[0], VidyoServiceClientBaseUrlResponseEid,
                             ConfigurationProperties.VidyoServiceEndpointUri);
+
+                        return;
                     }
 
                     Trace.Cic.warning("Unknown notification received! OID={}, EID={}",
