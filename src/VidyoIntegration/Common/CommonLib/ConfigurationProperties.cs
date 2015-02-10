@@ -22,6 +22,7 @@ namespace VidyoIntegration.CommonLib
         public static string VidyoRoomOwner { get { return GetConfig(); } }
         public static string VidyoRoomGroup { get { return GetConfig(); } }
         public static string VidyoServiceEndpointUri { get { return GetConfig(); } }
+        public static string VidyoExtensionPrefix { get { return GetConfig(); } }
         public static ChannelEndpointElement VidyoPortalUserServicePort { get { return GetEndpointConfig(); } }
         public static ChannelEndpointElement VidyoPortalGuestServicePort { get { return GetEndpointConfig(); } }
         public static ChannelEndpointElement VidyoPortalAdminServicePort { get { return GetEndpointConfig(); } }

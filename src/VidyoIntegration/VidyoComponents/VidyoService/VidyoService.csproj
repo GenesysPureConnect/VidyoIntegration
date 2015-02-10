@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="i3trace_dotnet_tracing-w32r-2-0">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\i3trace_dotnet_tracing-w32r-2-0.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\i3trace_dotnet_tracing-w32r-2-0.dll</HintPath>
     </Reference>
     <Reference Include="Nancy">
       <HintPath>..\..\packages\Nancy.0.23.2\lib\net40\Nancy.dll</HintPath>
@@ -74,8 +74,12 @@
     <Compile Include="VidyoServiceWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\VidyoPortalAdminService\VidyoIntegration.VidyoService.VidyoPortalAdminService.AddGroupResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
