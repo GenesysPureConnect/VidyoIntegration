@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DA37223-92A6-4562-BC9A-00CA739DB721}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VidyoIntegration.VidyoAddin</RootNamespace>
+    <AssemblyName>VidyoIntegration.VidyoAddin</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="i3trace_dotnet_tracing-w32r-2-0">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\i3trace_dotnet_tracing-w32r-2-0.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ININ.IceLib">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\ININ.IceLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ININ.IceLib.Interactions">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\ININ.IceLib.Interactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ININ.IceLib.People">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\ININ.IceLib.People.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ININ.InteractionClient.Addin">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\ININ.InteractionClient.Addin.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Annotations1.cs" />
+    <Compile Include="Trace.cs" />
+    <Compile Include="ViewModel\Helpers\ParticipantCollection.cs" />
+    <Compile Include="ViewModel\LookupEntryViewModel.cs" />
+    <Compile Include="View\VidyoInteractionDisplayPanel.xaml.cs">
+      <DependentUpon>VidyoInteractionDisplayPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\InteractionViewModel.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="VidyoAddin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\VidyoPanel.xaml.cs">
+      <DependentUpon>VidyoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Helpers\VideoGuestUrlState.cs" />
+    <Compile Include="ViewModel\VidyoPanelViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\VidyoInteractionDisplayPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VidyoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\delete_d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\delete_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\loudspeaker.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\loudspeaker_d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\loudspeaker_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\loudspeaker_pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\loudspeaker_pause_d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\loudspeaker_pause_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\webcam.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\webcam_d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\webcam_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\webcam_pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\webcam_pause_d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\controls\webcam_pause_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\documents.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\sign_warning.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\transfer\Make Conference 16 d m_add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\transfer\Make Conference 16 h m_add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\transfer\Make Conference 16 n m_add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\transfer\Transfer 16 d m.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\transfer\Transfer 16 h m.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\transfer\Transfer 16 n m.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\webcam_add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CommonLib\CommonLib.csproj">
+      <Project>{e82be7a6-3335-435d-a364-a655a74c470a}</Project>
+      <Name>CommonLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\TraceLib\TraceLib.csproj">
+      <Project>{ec6c24dd-3835-4446-9fc0-ef885d6ee8f1}</Project>
+      <Name>TraceLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoCompleteTextBoxLib\AutoCompleteTextBoxLib.csproj">
+      <Project>{7f1f7148-6e69-476c-9be6-4ac87c673c75}</Project>
+      <Name>AutoCompleteTextBoxLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

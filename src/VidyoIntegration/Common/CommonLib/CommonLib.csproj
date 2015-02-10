@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E82BE7A6-3335-435D-A364-A655A74C470A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VidyoIntegration.CommonLib</RootNamespace>
+    <AssemblyName>VidyoIntegration.CommonLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="i3trace_dotnet_tracing-w32r-2-0">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\i3trace_dotnet_tracing-w32r-2-0.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.IceLib">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\ININ.IceLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.IceLib.Interactions">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R1_P3 (x86)\bin\ININ.IceLib.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CicTypes\CicQueueType.cs" />
+    <Compile Include="CicTypes\GenericInteractionInitialState.cs" />
+    <Compile Include="CicTypes\IntervalTypes.cs" />
+    <Compile Include="CicTypes\RequestClasses\AttachConversationRequest.cs" />
+    <Compile Include="CicTypes\RequestClasses\ChatInteractionMediaTypeParameters.cs" />
+    <Compile Include="CicTypes\RequestClasses\CreateConversationRequest.cs" />
+    <Compile Include="CicTypes\RequestClasses\GenericInteractionMediaTypeParameters.cs" />
+    <Compile Include="CicTypes\RequestClasses\GetQueueInfoRequest.cs" />
+    <Compile Include="CicTypes\RequestClasses\CallbackInteractionMediaTypeParameters.cs" />
+    <Compile Include="CicTypes\RequestClasses\MediaTypeParameters.cs" />
+    <Compile Include="CicTypes\Serializers\AbstractJsonConverter.cs" />
+    <Compile Include="CicTypes\TransportClasses\CicInfo.cs" />
+    <Compile Include="CicTypes\TransportClasses\QueueInfo.cs" />
+    <Compile Include="CicTypes\VideoConversationMediaType.cs" />
+    <Compile Include="CicTypes\VidyoIntegrationAttributeNames.cs" />
+    <Compile Include="ConfigurationProperties.cs" />
+    <Compile Include="ConversationTypes\CallbackVideoConversationInitializationParameters.cs" />
+    <Compile Include="ConversationTypes\ChatVideoConversationInitializationParameters.cs" />
+    <Compile Include="ConversationTypes\GenericInteractionVideoConversationInitializationParameters.cs" />
+    <Compile Include="ConversationTypes\VideoConversationInitializationParameters.cs" />
+    <Compile Include="Exceptions\ConversationNotFoundException.cs" />
+    <Compile Include="Trace.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VidyoTypes\EndpointUrlMissingException.cs" />
+    <Compile Include="VidyoTypes\RequestClasses\RoomAction.cs" />
+    <Compile Include="VidyoTypes\RequestClasses\RoomActionRequest.cs" />
+    <Compile Include="VidyoTypes\TransportClasses\Participant.cs" />
+    <Compile Include="VidyoTypes\TransportClasses\ParticipantCount.cs" />
+    <Compile Include="VidyoTypes\TransportClasses\Room.cs" />
+    <Compile Include="CommonTypes\RouteInfo.cs" />
+    <Compile Include="CommonTypes\ServiceInfo.cs" />
+    <Compile Include="VidyoTypes\TransportClasses\VidyoInfo.cs" />
+    <Compile Include="VidyoTypes\VidyoServiceClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TraceLib\TraceLib.csproj">
+      <Project>{ec6c24dd-3835-4446-9fc0-ef885d6ee8f1}</Project>
+      <Name>TraceLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

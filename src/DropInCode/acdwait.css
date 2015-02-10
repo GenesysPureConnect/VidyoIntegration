@@ -1,0 +1,48 @@
+html {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	min-width: 1300px;
+	background-color: #DF8C00;
+}
+
+#ininvid_mainContentWrapper{
+	width: 100%;
+	height: 100%;
+	background-image: url('img/panel_small.png');
+	background-attachment: fixed;
+	background-position: center top;
+	padding: 0;
+	margin: 0;
+}
+
+#ininvid_headerMessage {
+	text-align: center;
+}
+
+#ininvid_headerMessage h1 {
+	font-style: italic;
+}
+
+#ininvid_header img {
+	margin: 30px auto;
+	display: block;
+}
+
+#ininvid_mainContentColumn {
+	width: 1280px;
+	margin: 0 auto; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+}
+
+#ininvid_mainContentColumn iframe {
+	margin: 0 auto;
+	display: block;
+}
