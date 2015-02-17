@@ -18,9 +18,9 @@ namespace VidyoIntegration.VidyoAddin
         private ElementHost _elementHost = null;
         private VidyoPanel _vidyoPanel = null;
         private IServiceProvider _serviceProvider;
+        private IInteractionSelector _interactionSelector;
         private Session _session;
         private readonly Window _window = null;
-        private SynchronizationContext _context;
 
         protected override string Id
         {
@@ -44,18 +44,28 @@ namespace VidyoIntegration.VidyoAddin
 
         public override object Content
         {
-            get { return _elementHost; }
+            get
+            {
+                VidyoIntegration.VidyoAddin.Trace.Main.status("The Get_Content thread has apartment state: {}", Thread.CurrentThread.GetApartmentState());
+
+                // Initialize view model
+                VidyoPanelViewModel.Instance.Initialize(_session, _interactionSelector);
+
+                // Initialize view
+                _vidyoPanel = new VidyoPanel
+                {
+                    DataContext = VidyoPanelViewModel.Instance
+                };
+                //_vidyoPanel.InitializeComponent();
+                _elementHost = new ElementHost { Dock = DockStyle.Fill, Child = _vidyoPanel };
+                return _elementHost;
+            }
         }
-
-
-
+        
         public VidyoAddin()
         {
             VidyoIntegration.VidyoAddin.Trace.Initialize(typeof(EventId), "VidyoAddin");
-            _context = SynchronizationContext.Current;
         }
-
-
 
         protected override void OnLoad(IServiceProvider serviceProvider)
         {
@@ -72,33 +82,10 @@ namespace VidyoIntegration.VidyoAddin
                     throw new InstanceNotFoundException("Failed to get the IceLib Session from the service provider!");
 
                 // Get IInteractionSelector
-                var interactionSelector =
+                _interactionSelector =
                     _serviceProvider.GetService(typeof (IInteractionSelector)) as IInteractionSelector;
 
-                _context.Send(s =>
-                {
-                    try
-                    {
-                        // Initialize view model
-                        VidyoPanelViewModel.Instance.Initialize(_session, interactionSelector);
-
-                        // Initialize view
-                        _vidyoPanel = new VidyoPanel
-                        {
-                            DataContext = VidyoPanelViewModel.Instance
-                        };
-                        //_vidyoPanel.InitializeComponent();
-                        _elementHost = new ElementHost {Dock = DockStyle.Fill, Child = _vidyoPanel};
-                    }
-                    catch (Exception ex)
-                    {
-                        VidyoIntegration.VidyoAddin.Trace.Main.exception(ex, ex.Message);
-                        MessageBox.Show(
-                            "Vidyo Addin initialization failed! " + ex.Message +
-                            "\n\nPlease contact your system administrator.",
-                            "Critical error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }, null);
+                VidyoIntegration.VidyoAddin.Trace.Main.status("The OnLoad thread has apartment state: {}", Thread.CurrentThread.GetApartmentState());
             }
             catch (Exception ex)
             {
@@ -114,29 +101,19 @@ namespace VidyoIntegration.VidyoAddin
         {
             try
             {
-                _context.Send(s =>
+                // Clear the vidyo panel reference
+                _vidyoPanel = null;
+
+                // Clean up the element host
+                if (!_elementHost.IsDisposed)
                 {
-                    try
-                    {
-                        // Clear the vidyo panel reference
-                        _vidyoPanel = null;
+                    _elementHost.Child = null;
+                    _elementHost.Dispose();
+                }
+                _elementHost = null;
 
-                        // Clean up the element host
-                        if (!_elementHost.IsDisposed)
-                        {
-                            _elementHost.Child = null;
-                            _elementHost.Dispose();
-                        }
-                        _elementHost = null;
-
-                        // Close the debug window
-                        if (_window != null) _window.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        VidyoIntegration.VidyoAddin.Trace.Main.exception(ex, ex.Message);
-                    }
-                }, null);
+                // Close the debug window
+                if (_window != null) _window.Close();
             }
             catch (Exception ex)
             {
