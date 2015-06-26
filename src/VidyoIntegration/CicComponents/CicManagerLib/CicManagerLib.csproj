@@ -33,17 +33,20 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="i3trace_dotnet_tracing-w32r-2-0">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\i3trace_dotnet_tracing-w32r-2-0.dll</HintPath>
+    <Reference Include="i3trace_dotnet_tracing-w32r-3-0">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-3-0.dll</HintPath>
     </Reference>
     <Reference Include="ININ.IceLib">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\ININ.IceLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\ININ.IceLib.dll</HintPath>
     </Reference>
     <Reference Include="ININ.IceLib.Interactions">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\ININ.IceLib.Interactions.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\ININ.IceLib.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.IceLib.People">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\ININ.IceLib.People.dll</HintPath>
     </Reference>
     <Reference Include="ININ.IceLib.Statistics">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\ININ.IceLib.Statistics.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\ININ.IceLib.Statistics.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
