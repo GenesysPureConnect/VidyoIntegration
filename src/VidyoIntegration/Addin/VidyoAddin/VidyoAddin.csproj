@@ -33,20 +33,25 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="i3trace_dotnet_tracing-w32r-2-0">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\i3trace_dotnet_tracing-w32r-2-0.dll</HintPath>
+    <Reference Include="i3trace_dotnet_tracing-w32r-2-1">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R2_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-2-1.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ININ.IceLib">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\ININ.IceLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R2_P0 (x86)\bin\ININ.IceLib.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ININ.IceLib.Interactions">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\ININ.IceLib.Interactions.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R2_P0 (x86)\bin\ININ.IceLib.Interactions.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ININ.IceLib.People">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\IceLib\2015r1\P02\bin\ININ.IceLib.People.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R2_P0 (x86)\bin\ININ.IceLib.People.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ININ.InteractionClient.Addin">
-      <HintPath>..\..\..\..\..\..\..\..\perforce_workspace\matthias.kohl_laptop\depot\systest\PSO\resources\lib\InteractionClient.Addin\2015r1\ININ.InteractionClient.Addin.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Interactive Intelligence\ICUserApps\ININ.InteractionClient.Addin.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

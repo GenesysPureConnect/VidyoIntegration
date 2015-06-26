@@ -46,14 +46,14 @@
       <UIRef Id="WixUI_ErrorProgressText" />
     </UI>
  
-    <WixVariable Id="WixUIBannerBmp" Value="banner.bmp" />
-    <WixVariable Id="WixUIDialogBmp" Value="dialog.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="banner.png" />
+    <WixVariable Id="WixUIDialogBmp" Value="dialog.png" />
     <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
  
  
     <!--Add/Remove Programs Icon Image-->
-    <Icon Id="I3Logo.ico" SourceFile="I3Logo.ico"/>
-    <Property Id="ARPPRODUCTICON" Value="I3Logo.ico" />
+    <Icon Id="ininlogo.ico" SourceFile="ininlogo.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="ininlogo.ico" />
 
     <!--Install Location Path-->
     <Property Id="INSTALLLOCATION">

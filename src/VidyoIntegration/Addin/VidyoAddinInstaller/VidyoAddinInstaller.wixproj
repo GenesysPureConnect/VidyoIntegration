@@ -24,12 +24,6 @@
     <Compile Include="Product.wxs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="banner.bmp" />
-    <Content Include="dialog.bmp" />
-    <Content Include="I3Logo.ico" />
-    <Content Include="license.rtf" />
-  </ItemGroup>
-  <ItemGroup>
     <WixExtension Include="WixUtilExtension">
       <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
       <Name>WixUtilExtension</Name>
@@ -38,6 +32,12 @@
       <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
       <Name>WixUIExtension</Name>
     </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="banner.png" />
+    <Content Include="dialog.png" />
+    <Content Include="ininlogo.ico" />
+    <Content Include="license.rtf" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
