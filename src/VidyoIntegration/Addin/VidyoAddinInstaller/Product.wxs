@@ -2,12 +2,11 @@
 <?define Win64 = "no" ?>
 <?define ProductName = "Vidyo Addin" ?>
 <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
-<?define ProductVersion = "1.1.0.0"?>
 <?define ProductUpgradeCode = "19DBA20C-554C-471F-90F0-558A86A6B2A0"?>
 <?define ManufacturerName = "Interactive Intelligence"?>
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.ManufacturerName)" UpgradeCode="$(var.ProductUpgradeCode)">
+  <Product Id="*" Name="$(var.ProductName)" Language="1033" Version="!(bind.FileVersion.VidyoIntegration.VidyoAddin.dll)" Manufacturer="$(var.ManufacturerName)" UpgradeCode="$(var.ProductUpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
     
     <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
@@ -26,8 +25,8 @@
 
     <!--Uninstall Previous Versions-->
     <Upgrade Id="$(var.ProductUpgradeCode)">
-      <UpgradeVersion Minimum="$(var.ProductVersion)" IncludeMinimum="no" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
-      <UpgradeVersion Minimum="0.0.0" Maximum="$(var.ProductVersion)" IncludeMinimum="yes" IncludeMaximum="yes" Property="OLDERVERSIONBEINGUPGRADED" />
+      <UpgradeVersion Minimum="!(bind.FileVersion.VidyoIntegration.VidyoAddin.dll)" IncludeMinimum="no" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
+      <UpgradeVersion Minimum="0.0.0" Maximum="!(bind.FileVersion.VidyoIntegration.VidyoAddin.dll)" IncludeMinimum="yes" IncludeMaximum="yes" Property="OLDERVERSIONBEINGUPGRADED" />
     </Upgrade>
  
     <Feature Id="ProductFeature" Title="Vidyo Addin" Level="1">
