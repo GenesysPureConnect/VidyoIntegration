@@ -50,7 +50,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="ININ.InteractionClient.Addin">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Interactive Intelligence\ICUserApps\ININ.InteractionClient.Addin.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Interactive Intelligence\ICUserApps\ININ.InteractionClient.Addin.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />
