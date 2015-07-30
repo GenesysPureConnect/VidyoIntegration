@@ -251,7 +251,7 @@ namespace VidyoIntegration.VidyoService
 
                     // Get a random extension for the room and create the name
                     var ext = MakeRandomRoomExtension();
-                    var roomName = "Vidyo Integration Room (" + ext + ")";
+                    var roomName = "Vidyo_Integration_Room_" + ext;
 
                     // Invoke the Vidyo service to create the room
                     Trace.Vidyo.note("Creating room \"{}\"...", roomName);
