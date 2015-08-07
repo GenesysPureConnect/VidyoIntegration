@@ -796,7 +796,7 @@ namespace VidyoIntegration.VidyoAddin.ViewModel
                      * [2] = Join url (guest link)
                      */
                     SendCustomNotification(CustomMessageType.ApplicationRequest, interaction.TransferTarget.Entry.EntryId,
-                        JoinVidyoConferenceRequestEid, _session.UserId, message, "http://www.inin.com");
+                        JoinVidyoConferenceRequestEid, _session.UserId, message, interaction.VidyoRoomUrl);
                 }
                 catch (Exception ex)
                 {
