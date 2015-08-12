@@ -33,8 +33,8 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="i3trace_dotnet_tracing-w32r-3-0">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-3-0.dll</HintPath>
+    <Reference Include="i3trace_dotnet_tracing-w32r-4-0">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R4_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-4-0.dll</HintPath>
     </Reference>
     <Reference Include="Nancy">
       <HintPath>..\..\packages\Nancy.0.23.2\lib\net40\Nancy.dll</HintPath>

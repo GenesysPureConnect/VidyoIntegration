@@ -33,20 +33,20 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="i3trace_dotnet_tracing-w32r-3-0">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-3-0.dll</HintPath>
+    <Reference Include="i3trace_dotnet_tracing-w32r-4-0">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R4_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-4-0.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ININ.IceLib">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\ININ.IceLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R4_P0 (x86)\bin\ININ.IceLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ININ.IceLib.Interactions">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\ININ.IceLib.Interactions.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R4_P0 (x86)\bin\ININ.IceLib.Interactions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ININ.IceLib.People">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R3_P0 (x86)\bin\ININ.IceLib.People.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R4_P0 (x86)\bin\ININ.IceLib.People.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ININ.InteractionClient.Addin">
