@@ -35,10 +35,36 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="banner.bmp" />
-    <Content Include="dialog.bmp" />
-    <Content Include="I3Logo.ico" />
+    <Content Include="banner.png" />
+    <Content Include="dialog.png" />
+    <Content Include="ininlogo.ico" />
     <Content Include="license.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CicComponents\CoreServiceLib\CoreServiceLib.csproj">
+      <Name>CoreServiceLib</Name>
+      <Project>{29d12dff-d33e-4d66-8e41-51d49de84547}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\VidyoComponents\VidyoService\VidyoService.csproj">
+      <Name>VidyoService</Name>
+      <Project>{846f954b-9e94-49c6-888f-4887f4200a72}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\VidyoIntegrationWindowsService\VidyoIntegrationWindowsService.csproj">
+      <Name>VidyoIntegrationWindowsService</Name>
+      <Project>{9fbcfe44-7752-4ef0-8547-4ca9dd28d1bf}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
@@ -49,4 +75,19 @@
 	<Target Name="AfterBuild">
 	</Target>
 	-->
+  <!-- This <Target> element has been custom added to control the msi file name -->
+  <Target Name="BeforeBuild">
+    <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)Common\VidyoIntegrationWindowsService\bin\$(Configuration)\VidyoIntegrationWindowsService.exe">
+      <Output TaskParameter="Assemblies" ItemName="AssemblyVersions" />
+    </GetAssemblyIdentity>
+    <CreateProperty Value="$(OutputName)_%(AssemblyVersions.Version)">
+      <Output TaskParameter="Value" PropertyName="TargetName" />
+    </CreateProperty>
+    <CreateProperty Value="$(TargetName)$(TargetExt)">
+      <Output TaskParameter="Value" PropertyName="TargetFileName" />
+    </CreateProperty>
+    <CreateProperty Value="$(TargetDir)$(TargetFileName)">
+      <Output TaskParameter="Value" PropertyName="TargetPath" />
+    </CreateProperty>
+  </Target>
 </Project>
