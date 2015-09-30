@@ -36,9 +36,9 @@
     <Reference Include="i3trace_dotnet_tracing-w32r-4-0">
       <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2015_R4_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-4-0.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,9 +56,6 @@
     <Compile Include="VideoConversation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Common\CommonLib\CommonLib.csproj">
       <Project>{e82be7a6-3335-435d-a364-a655a74c470a}</Project>
       <Name>CommonLib</Name>
@@ -67,6 +64,9 @@
       <Project>{ec6c24dd-3835-4446-9fc0-ef885d6ee8f1}</Project>
       <Name>TraceLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
