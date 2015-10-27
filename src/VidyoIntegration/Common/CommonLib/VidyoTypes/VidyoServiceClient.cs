@@ -100,6 +100,8 @@ namespace VidyoIntegration.CommonLib.VidyoTypes
 
         private static bool ValidateResponse(IRestResponse response)
         {
+            Trace.Common.note("Validating response: {}", response.Content);
+            
             if ((int)response.StatusCode < 200 || (int)response.StatusCode >= 300)
             {
                 // Response was not OK
