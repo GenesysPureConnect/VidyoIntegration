@@ -8,18 +8,25 @@ namespace VidyoIntegration.VidyoAddin.ViewModel.Helpers
     {
         public void AddRange(IEnumerable<T> items, bool replace = false)
         {
-            CheckReentrancy();
-
-            // Optionally clear first
-            if (replace) Items.Clear();
-
-            // Privately set the items
-            foreach (var item in items)
+            try
             {
-                Items.Add(item);
-            }
+                CheckReentrancy();
 
-            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+                // Optionally clear first
+                if (replace) Items.Clear();
+
+                // Privately set the items
+                foreach (var item in items)
+                {
+                    Items.Add(item);
+                }
+            }
+            catch { }
+
+            finally
+            {
+                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            }
         }
     }
 }
