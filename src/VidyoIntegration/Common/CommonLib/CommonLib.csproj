@@ -33,16 +33,16 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="i3trace_dotnet_tracing-w32r-5-0">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2016_R1_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-5-0.dll</HintPath>
+    <Reference Include="i3trace_dotnet_tracing-w32r-16-3">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2016_R3_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-16-3.dll</HintPath>
     </Reference>
     <Reference Include="ININ.IceLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2016_R1_P0 (x86)\bin\ININ.IceLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2016_R3_P0 (x86)\bin\ININ.IceLib.dll</HintPath>
     </Reference>
     <Reference Include="ININ.IceLib.Interactions, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2016_R1_P0 (x86)\bin\ININ.IceLib.Interactions.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2016_R3_P0 (x86)\bin\ININ.IceLib.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
