@@ -44,17 +44,17 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents">
       <Component Id="VidyoIntegrationService" Guid="2D254B9C-E688-442D-9571-7009478114B9" Directory="INSTALLLOCATION">
-        <File Id="ace.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\ace-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="core_events.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\core_events-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="i3core.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3core-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="i3eventlog.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3eventlog-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="ace.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\ace-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="core_events.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\core_events-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3core.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3core-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3eventlog.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3eventlog-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="i3moduleregistry.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3moduleregistry-w32.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="i3serialize_managed.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3serialize_managed-a00r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="i3serialize_managed.pdb" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3serialize_managed-a00r-16-3.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="i3trace.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3trace-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="i3trace_dotnet_tracing.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3trace_dotnet_tracing-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="i3trace_dotnet_tracing.pdb" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3trace_dotnet_tracing-w32r-16-3.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="i3trace_dotnet_tracing_interop.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3trace_dotnet_tracing_interop-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3serialize_managed.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3serialize_managed-a00r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3serialize_managed.pdb" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3serialize_managed-a00r-16-4.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3trace.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3trace-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3trace_dotnet_tracing.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3trace_dotnet_tracing-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3trace_dotnet_tracing.pdb" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3trace_dotnet_tracing-w32r-16-4.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="i3trace_dotnet_tracing_interop.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\i3trace_dotnet_tracing_interop-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="ININ.Common.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\ININ.Common.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="ININ.Common.pdb" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\ININ.Common.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="ININ.IceLib.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\ININ.IceLib.dll" Vital="yes" KeyPath="no" DiskId="1"/>
@@ -73,9 +73,9 @@
         <File Id="Nancy.Hosting.Self.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\Nancy.Hosting.Self.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="Nancy.Serialization.JsonNet.dll" Source="$(var.CoreServiceLib.TargetDir)\Nancy.Serialization.JsonNet.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="Newtonsoft.Json.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\Newtonsoft.Json.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="openssl.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\openssl-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="openssl.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\openssl-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="RestSharp.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\RestSharp.dll" Vital="yes" KeyPath="no" DiskId="1"/>
-        <File Id="stlport.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\stlport-w32r-16-3.dll" Vital="yes" KeyPath="no" DiskId="1"/>
+        <File Id="stlport.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\stlport-w32r-16-4.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="VidyoIntegration.CicManagerLib.dll" Source="$(var.CoreServiceLib.TargetDir)\VidyoIntegration.CicManagerLib.dll" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="VidyoIntegration.CicManagerLib.pdb" Source="$(var.CoreServiceLib.TargetDir)\VidyoIntegration.CicManagerLib.pdb" Vital="yes" KeyPath="no" DiskId="1"/>
         <File Id="VidyoIntegration.CommonLib.dll" Source="$(var.VidyoIntegrationWindowsService.TargetDir)\VidyoIntegration.CommonLib.dll" Vital="yes" KeyPath="no" DiskId="1"/>
