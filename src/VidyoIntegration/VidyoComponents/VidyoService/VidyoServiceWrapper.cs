@@ -155,7 +155,8 @@ namespace VidyoIntegration.VidyoService
                 "&roomKey=" + HttpUtility.UrlEncode(roomKey) +
                 "&guestName=" + HttpUtility.UrlEncode(guestName) +
                 "&pin=" + HttpUtility.UrlEncode(pin) +
-                "&roomPin=" + HttpUtility.UrlEncode(roomPin);
+                "&roomPin=" + HttpUtility.UrlEncode(roomPin) +
+                "&encoded=1";
         }
 
         private Room MakeRoom(VidyoIntegration.VidyoService.VidyoPortalAdminService.Room room)
