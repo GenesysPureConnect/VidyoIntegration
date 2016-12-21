@@ -149,7 +149,7 @@ namespace VidyoIntegration.VidyoService
 
         private string MakeGuestJoinUrl(string portalUri, string roomKey, string guestName, string pin, string roomPin)
         {
-            return
+            var url =
                 ConfigurationProperties.VidyoWebBaseUrl +
                 "?portalUri=" + HttpUtility.UrlEncode(portalUri) +
                 "&roomKey=" + HttpUtility.UrlEncode(roomKey) +
@@ -157,6 +157,11 @@ namespace VidyoIntegration.VidyoService
                 "&pin=" + HttpUtility.UrlEncode(pin) +
                 "&roomPin=" + HttpUtility.UrlEncode(roomPin) +
                 "&encoded=1";
+            if (!string.IsNullOrWhiteSpace(ConfigurationProperties.VidyoWebRTCSessionManager))
+            {
+                url += "&webrtc=" + HttpUtility.UrlEncode(ConfigurationProperties.VidyoWebRTCSessionManager);
+            }
+            return url;
         }
 
         private Room MakeRoom(VidyoIntegration.VidyoService.VidyoPortalAdminService.Room room)
