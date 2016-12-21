@@ -53,7 +53,7 @@
     <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)Addin\VidyoAddin\bin\$(Configuration)\VidyoIntegration.VidyoAddin.dll">
       <Output TaskParameter="Assemblies" ItemName="AssemblyVersions" />
     </GetAssemblyIdentity>
-    <CreateProperty Value="$(OutputName)_%(AssemblyVersions.Version)">
+    <CreateProperty Value="$(OutputName)-%(AssemblyVersions.Version)">
       <Output TaskParameter="Value" PropertyName="TargetName" />
     </CreateProperty>
     <CreateProperty Value="$(TargetName)$(TargetExt)">

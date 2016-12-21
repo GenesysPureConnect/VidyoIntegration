@@ -80,7 +80,7 @@
     <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)Common\VidyoIntegrationWindowsService\bin\$(Configuration)\VidyoIntegrationWindowsService.exe">
       <Output TaskParameter="Assemblies" ItemName="AssemblyVersions" />
     </GetAssemblyIdentity>
-    <CreateProperty Value="$(OutputName)_%(AssemblyVersions.Version)">
+    <CreateProperty Value="$(OutputName)-%(AssemblyVersions.Version)">
       <Output TaskParameter="Value" PropertyName="TargetName" />
     </CreateProperty>
     <CreateProperty Value="$(TargetName)$(TargetExt)">
