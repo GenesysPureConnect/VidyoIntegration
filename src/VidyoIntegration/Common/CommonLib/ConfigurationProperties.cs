@@ -19,6 +19,7 @@ namespace VidyoIntegration.CommonLib
         public static string VidyoAdminUsername { get { return GetConfig(); } }
         public static string VidyoAdminPassword { get { return GetConfig(); } }
         public static string VidyoWebBaseUrl { get { return GetConfig(); } }
+        public static string VidyoWebRTCSessionManager { get  { return GetConfig(); } }
         public static string VidyoRoomOwner { get { return GetConfig(); } }
         public static string VidyoRoomGroup { get { return GetConfig(); } }
         public static string VidyoServiceEndpointUri { get { return GetConfig(); } }

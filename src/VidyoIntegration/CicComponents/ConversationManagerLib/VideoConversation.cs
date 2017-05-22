@@ -91,7 +91,12 @@ namespace VidyoIntegration.ConversationManagerLib
             var url = ConfigurationProperties.VidyoWebBaseUrl +
                       "?portalUri=" + HttpUtility.UrlEncode(room.RoomUrl) +
                       "&key=" + HttpUtility.UrlEncode(room.RoomKey) +
-                      "&roomPin=" + HttpUtility.UrlEncode(room.Pin);
+                      "&roomPin=" + HttpUtility.UrlEncode(room.Pin) +
+                      "&encoded=1";
+            if (! string.IsNullOrWhiteSpace(ConfigurationProperties.VidyoWebRTCSessionManager))
+            {
+                url += "&webrtc=" + HttpUtility.UrlEncode(ConfigurationProperties.VidyoWebRTCSessionManager);
+            }
             return url;
         }
 

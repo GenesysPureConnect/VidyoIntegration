@@ -1,0 +1,37 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+require 'fileutils'
+
+cache_dir = ENV['DAAS_CACHE'] || case RUBY_PLATFORM
+  when 'i386-mingw32', 'x64-mingw32' then File.join(ENV['PROGRAMDATA'], 'DaaS', 'cache')
+  else File.join('/var', 'cache', 'daas')
+end 
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "daas/windows-2012R2"
+  config.vm.box_check_update = false
+  config.vm.hostname    = 'Vidyo-client'
+
+  config.vm.provider :hyperv do |provider|
+    provider.vmname            = config.vm.hostname
+    provider.differencing_disk = true
+  end 
+
+  config.vm.provider :virtualbox do |provider, override|
+    provider.customize ['modifyvm', :id, '--vram',        128]
+    provider.customize ['modifyvm', :id, '--clipboard',   'bidirectional']
+    provider.customize ['modifyvm', :id, '--draganddrop', 'bidirectional']
+  end
+
+  if Dir.exist? cache_dir
+    config.vm.synced_folder cache_dir, '/daas'
+    config.vm.post_up_message = "Install the Client software from the CIC ISO in /daas, then install Add-In from /Installer"
+    config.vm.provision :shell, name: 'Installing Interaction Desktop', inline: <<-SHELL
+      if (! (Test-Path S:/Installs)) { imdisk -a -m S: -f "C:/daas/CIC_2017_R2.iso" }
+      #& msiexec /I S:/Installs/ServerComponents/ICUserApps_64bit_2015_R4.msi /passive /qr /l*v "C:/Windows/Logs/icuserapps.log" ICSERVERNAME="cic-shinsei.lab.apac.inin.com" DONOTINSTALL_ININQOSDRIVER=1
+SHELL
+  else
+    config.vm.post_up_message = "Find a way to install the Client software from a CIC ISO, then install Add-In from /Installer"
+  end
+
+end

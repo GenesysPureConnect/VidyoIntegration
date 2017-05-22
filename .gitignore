@@ -106,3 +106,14 @@ Generated_Code #added for RIA/Silverlight projects
 _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
+
+# Logs
+[Ll]ogs/
+[Ll]og/
+
+# Temp stuff
+[Tt]mp/
+[Tt]emp/
+
+# Vagrant data
+.vagrant/
