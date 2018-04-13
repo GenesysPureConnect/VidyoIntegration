@@ -44,8 +44,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="i3trace_dotnet_tracing-w32r-17-3">
-      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2017_R3_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-17-3.dll</HintPath>
+    <Reference Include="i3trace_dotnet_tracing-w32r-18-2">
+      <HintPath>..\..\..\..\..\..\lib\IceLib\IC4_2018_R2_P0 (x86)\bin\i3trace_dotnet_tracing-w32r-18-2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
