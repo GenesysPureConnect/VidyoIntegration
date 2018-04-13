@@ -94,6 +94,8 @@ AppPackages/
 sql
 TestResults
 [Tt]est[Rr]esult*
+db.lock
+storage.ide
 *.Cache
 ClientBin
 [Ss]tyle[Cc]op.*
